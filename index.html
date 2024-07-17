@@ -1,49 +1,66 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>내 GitHub Pages 사이트</title>
-    <link rel="stylesheet" href="styles.css">
-    <script>
-        // JavaScript 파일에서 현재 경로가 /m1/이 아닌 경우에만 /m1/로 리다이렉션하는 코드
-        if (window.location.pathname !== '/m1/') {
-            window.location.href = '/m1/';
-        }
-    </script>
+    <title>My Personal Website</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
-    <header>
-        <h1>내 GitHub Pages 사이트에 오신 것을 환영합니다</h1>
+<body class="bg-light text-dark">
+    <header class="bg-primary text-white text-center p-4">
+        <h1 class="custom-bounce">My Personal Website</h1>
     </header>
-    <nav>
-        <ul>
-            <li><a href="/m1/#home">홈</a></li>
-            <li><a href="/m1/#about">소개</a></li>
-            <li><a href="/m1/#projects">프로젝트</a></li>
-            <li><a href="/m1/#contact">연락</a></li>
-        </ul>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">My Website</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </nav>
-    <main>
-        <section id="home">
-            <h2>홈</h2>
-            <p>이곳은 내 웹사이트의 홈 섹션입니다.</p>
+    <main class="container mt-5">
+        <section id="home" class="mb-5">
+            <h2 class="text-center custom-fadeInLeft">Home</h2>
+            <p class="custom-fadeInLeft">Welcome to my personal website. Here you'll find information about me and my work.</p>
         </section>
-        <section id="about">
-            <h2>자기 소개</h2>
-            <p>이곳은 내 웹사이트의 자기 소개 섹션입니다.</p>
+        <section id="about" class="mb-5">
+            <h2 class="text-center custom-fadeInRight">About Me</h2>
+            <p class="custom-fadeInRight">I am a web developer with a passion for creating beautiful and functional websites.</p>
         </section>
-        <section id="projects">
-            <h2>프로젝트</h2>
-            <p>이곳은 내 웹사이트의 프로젝트 섹션입니다.</p>
+        <section id="projects" class="mb-5">
+            <h2 class="text-center custom-slideInLeft">Projects</h2>
+            <p class="custom-slideInLeft">Here are some of my recent projects.</p>
         </section>
-        <section id="contact">
-            <h2>연락</h2>
-            <p>이곳은 내 웹사이트의 연락 섹션입니다.</p>
+        <section id="contact" class="mb-5">
+            <h2 class="text-center custom-slideInRight">Contact</h2>
+            <p class="custom-slideInRight">If you would like to get in touch, please contact me via email or social media.</p>
         </section>
     </main>
-    <footer>
-        <p>&copy; 2023 내 GitHub Pages 사이트</p>
+    <footer class="bg-primary text-white text-center p-4">
+        <p class="custom-fadeInUp">&copy; 2023 My Personal Website</p>
     </footer>
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
