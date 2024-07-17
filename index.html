@@ -54,8 +54,8 @@
                         <img src="project1.jpg" class="card-img-top" alt="Project 1">
                         <div class="card-body">
                             <h5 class="card-title">프로젝트 1</h5>
-                            <p class="card-text">프로젝트 1 설명.</p>
-                            <a href="#" class="btn btn-primary">프로젝트 보기</a>
+                            <p class="card-text">프로젝트 1 간단 설명.</p>
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#project1Modal">자세히 보기</button>
                         </div>
                     </div>
                 </div>
@@ -64,8 +64,8 @@
                         <img src="project2.jpg" class="card-img-top" alt="Project 2">
                         <div class="card-body">
                             <h5 class="card-title">프로젝트 2</h5>
-                            <p class="card-text">프로젝트 2 설명.</p>
-                            <a href="#" class="btn btn-primary">프로젝트 보기</a>
+                            <p class="card-text">프로젝트 2 간단 설명.</p>
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#project2Modal">자세히 보기</button>
                         </div>
                     </div>
                 </div>
@@ -74,8 +74,8 @@
                         <img src="project3.jpg" class="card-img-top" alt="Project 3">
                         <div class="card-body">
                             <h5 class="card-title">프로젝트 3</h5>
-                            <p class="card-text">프로젝트 3 설명.</p>
-                            <a href="#" class="btn btn-primary">프로젝트 보기</a>
+                            <p class="card-text">프로젝트 3 간단 설명.</p>
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#project3Modal">자세히 보기</button>
                         </div>
                     </div>
                 </div>
@@ -95,6 +95,67 @@
     <footer class="bg-primary text-white text-center p-4">
         <p>&copy; 2024 내 개인 웹사이트</p>
     </footer>
+
+    <!-- 프로젝트 1 모달 -->
+    <div class="modal fade" id="project1Modal" tabindex="-1" aria-labelledby="project1ModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="project1ModalLabel">프로젝트 1</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>프로젝트 1에 대한 자세한 설명입니다. 여기에는 프로젝트의 배경, 목표, 사용된 기술, 얻은 결과 등을 포함할 수 있습니다.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">닫기</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 프로젝트 2 모달 -->
+    <div class="modal fade" id="project2Modal" tabindex="-1" aria-labelledby="project2ModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="project2ModalLabel">프로젝트 2</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>프로젝트 2에 대한 자세한 설명입니다. 여기에는 프로젝트의 배경, 목표, 사용된 기술, 얻은 결과 등을 포함할 수 있습니다.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">닫기</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 프로젝트 3 모달 -->
+    <div class="modal fade" id="project3Modal" tabindex="-1" aria-labelledby="project3ModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="project3ModalLabel">프로젝트 3</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>프로젝트 3에 대한 자세한 설명입니다. 여기에는 프로젝트의 배경, 목표, 사용된 기술, 얻은 결과 등을 포함할 수 있습니다.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">닫기</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Bootstrap JS and dependencies -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
