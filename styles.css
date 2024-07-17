@@ -1,46 +1,31 @@
-body {
-    font-family: 'Arial', sans-serif;
-}
-
-header h1 {
-    font-size: 3rem;
-    margin-bottom: 0;
-}
-
-nav .nav-link {
-    font-size: 1.1rem;
-    margin-right: 1rem;
-    transition: color 0.3s ease;
-}
-
-nav .nav-link:hover {
-    color: #007bff;
-}
-
-section h2 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    color: #007bff;
-}
-
-section p {
-    font-size: 1.2rem;
-}
-
-footer p {
-    margin: 0;
-}
-
 @media (max-width: 768px) {
-    header h1 {
-        font-size: 2.5rem;
+    header {
+        padding: 2rem 1rem;
     }
 
-    section h2 {
-        font-size: 2rem;
+    h1 {
+        font-size: 1.75rem;
     }
 
-    section p {
+    .navbar-brand {
+        font-size: 1.25rem;
+    }
+
+    .card-title {
         font-size: 1rem;
+    }
+
+    .card-text {
+        font-size: 0.875rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .navbar-nav {
+        text-align: center;
+    }
+
+    .nav-item {
+        margin-bottom: 0.5rem;
     }
 }
