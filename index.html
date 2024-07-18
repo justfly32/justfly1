@@ -3,203 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>내 개인 웹사이트</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <title>개인 웹페이지</title>
+    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
-    <nav class="main-nav" id="main-nav">
-        <div style="height:80px;background: rgb(51,74,92);padding-top: 1px;">
-            <h2 class="text-center" style="color:#fff; letter-spacing:2px;">MENU</h2>
-        </div>
-        <ul class="nav nav-pills nav-stacked">
-            <li class="active"><a href="#"><i class="fa fa-home fa-fw"></i>&nbsp; 홈</a></li>
-            <li><a href="#about"><i class="fa fa-user fa-fw"></i>&nbsp; 소개</a></li>
-            <li><a href="#what-i-do"><i class="fa fa-signal fa-fw"></i>&nbsp; 내가 하는 일</a></li>
-            <li><a href="#projects"><i class="fa fa-briefcase fa-fw"></i>&nbsp; 프로젝트</a></li>
-            <li><a href="#contact"><i class="fa fa-envelope-o fa-fw"></i>&nbsp; 연락처</a></li>
-        </ul>
-    </nav>
-
-    <div class="page-wrap">
-
-        <div class="jumbotron">
-            <div style="margin-top:130px" class="container">
-                <a href="#main-nav" class="h5 open-menu">
-                    <i style="color:#fff; position: relative; bottom:120px; cursor:pointer;" class="fa fa-bars fa-2x fa-fw"></i>
-                </a>
-                <a href="#" class="h5 close-menu">
-                    <i style="color:#fff; position: relative; bottom:120px; cursor:pointer;" class="fa fa-times fa-2x fa-fw"></i>
-                </a>
-                <h1>My personal Website</h1>
-                <div class="spacer"></div>
-                <h2 class="text-center">For Personal Use </h2>
-                <div class="spacer"></div>
-                <hr><hr>
-                <h2 class="text-center">On works</h2>
-            </div>
-        </div>
-
-        <div class="section" id="about"><h1>소개</h1><hr></div>
-
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="well">
-                        <img src="http://timothy.expert/codepen-resources/person_laptop.jpg" style="height:100%; width:100%">
-                    </div>
-                </div>
-                <div class="col-md-8">
-                    <div class="well">
-                        <h3>Bear J</h3>
-                        <p>For Fun.</p>
-                        <p><a href="#form" class="btn btn-default">Hire me</a></p>
-                    </div>
-                </div>
-            </div><!--/.row-->
-        </div><!--/.container-->
-
-        <div class="section" id="what-i-do"><h1>내가 하는 일</h1><hr></div>
-
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8">
-                    <div class="well">
-                        <h3>Skills</h3>
-                        <div class="spacer"></div><div class="spacer"></div>
-                        <div class="row">
-                            <div class="col-md-4">
-                                <div class="html"></div> <h4 style="font-weight: 400; display: inline;">AAA</h4><br>
-                                <div class="css"></div> <h4 style="font-weight: 400; display: inline;">BBB</h4><br>
-                                <div class="php"></div> <h4 style="font-weight: 400; display: inline;">CCC</h4><br>
-                                <div class="sql"></div> <h4 style="font-weight: 400; display: inline; margin-bottom:5px;">DDD</h4>
-                            </div>
-                            <div class="col-md-8">
-                                <div class="progress">
-                                    <div class="progress-bar progress-bar-html" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 90%">
-                                        <span class="sr-only">AAA 90%</span>
-                                    </div>
-                                </div>
-                                <div class="progress">
-                                    <div class="progress-bar progress-bar-css" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 90%">
-                                        <span class="sr-only">BBB 90%</span>
-                                    </div>
-                                </div>
-                                <div class="progress">
-                                    <div class="progress-bar progress-bar-php" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%">
-                                        <span class="sr-only">CCC 70%</span>
-                                    </div>
-                                </div>
-                                <div class="progress">
-                                    <div class="progress-bar progress-bar-sql" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
-                                        <span class="sr-only">DDD 80%</span>
-                                    </div>
-                                </div>
-                            </div><!--/.col-6-->
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="well">
-                        <h3>For Fun</h3>
-                        <p>On Works</p>
-                    </div>
-                </div>
-            </div><!--/.row-->
-        </div><!--/.container-->
-
-        <div class="section" id="contact"><h1>연락처</h1><hr></div>
-
-        <div class="work-together">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
-                        <h3>Send Me a Message</h3>
-                        <div class="spacer"></div>
-                        <form class="form-horizontal" role="form" id="form" method="post">
-                            <div class="form-group">
-                                <label for="name" class="col-sm-2 control-label">Name</label>
-                                <div class="col-sm-10">
-                                    <input type="text" class="contact form-control" name="name" id="name" placeholder="Name">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="email" class="col-sm-2 control-label">Email</label>
-                                <div class="col-sm-10">
-                                    <input type="email" class="contact form-control" name="email" id="email" placeholder="Email">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="subject" class="col-sm-2 control-label">Subject</label>
-                                <div class="col-sm-10">
-                                    <input type="text" class="contact form-control" name="subject" id="subject" placeholder="Subject">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="message" class="col-sm-2 control-label">Message</label>
-                                <div class="col-sm-10">
-                                    <textarea class="contact form-control" rows="3" name="message" id="message" placeholder="Message"></textarea>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="col-sm-offset-2 col-sm-10">
-                                    <input type="submit" value="Send" class="btn btn-default" name="submit">
-                                </div>
-                            </div>
-                        </form>
-                    </div><!--/.col-->
-                    <div class="col-lg-4 col-md-4 hidden-sm hidden-xs">
-                        <h3>Contact Details</h3>
-                        <div class="spacer"></div>
-                        <p class="lead" style="margin-bottom:0px;"><i class="fa fa-map-marker"></i>&nbsp; 6519 N. Fairfield Avenue</p>
-                        <p class="lead" style="text-indent:24px">AAA</p>
-                        <p class="lead"><i class="fa fa-phone"></i>&nbsp; BBB</p>
-                        <p class="lead"><i class="fa fa-envelope"></i>&nbsp; aaa@bbb.co</p>
-                    </div>
-                </div><!--/.row-->
-            </div><!--/.container-->
-            <div class="container hidden-sm hidden-xs">
-                <div class="spacer"></div>
-                <div class="spacer"></div>
-                <footer>
-                    <p class="pull-right">On Works</p>
-                </footer>
-            </div>
-        </div><!--/.work-together-->
-    </div><!--/.page-wrap-->
-
-    <!-- Bootstrap JS와 종속성 -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.min.js"></script>
-    <script>
-        // 프로젝트 추가 기능
-        document.getElementById('projectForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-
-            // 입력된 프로젝트 정보 가져오기
-            var title = document.getElementById('projectTitle').value;
-            var description = document.getElementById('projectDescription').value;
-
-            // 새로운 프로젝트 카드 생성
-            var newProject = document.createElement('div');
-            newProject.classList.add('col-md-4');
-            newProject.innerHTML = `
-                <div class="card mb-4 shadow-sm">
-                    <div class="card-body">
-                        <h5 class="card-title">${title}</h5>
-                        <p class="card-text">${description}</p>
-                    </div>
-                </div>
-            `;
-
-            // 프로젝트 목록에 추가
-            document.getElementById('projectList').appendChild(newProject);
-
-            // 양식 초기화
-            document.getElementById('projectForm').reset();
-        });
-    </script>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home"><i class="fas fa-home"></i> 홈</a></li>
+                <li><a href="#blog"><i class="fas fa-pencil-alt"></i> 블로그</a></li>
+                <li><a href="#portfolio"><i class="fas fa-briefcase"></i> 포트폴리오</a></li>
+                <li><a href="#contact"><i class="fas fa-envelope"></i> 연락처</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="home">
+            <h1>환영합니다!</h1>
+            <p>여기는 개인 웹페이지입니다.</p>
+        </section>
+        <section id="blog">
+            <h2>알림판</h2>
+            <form id="blogForm">
+                <input type="text" id="title" placeholder="제목" required>
+                <textarea id="content" placeholder="내용" required></textarea>
+                <button type="submit">글 올리기</button>
+            </form>
+            <div id="posts"></div>
+        </section>
+        <section id="portfolio">
+            <h2>포트폴리오</h2>
+            <p>여기에 프로젝트나 작업물을 소개합니다.</p>
+        </section>
+        <section id="contact">
+            <h2>연락처</h2>
+            <p>연락처 정보를 여기에 기재합니다.</p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 개인 웹페이지</p>
+    </footer>
+    <script src="scripts.js"></script>
 </body>
 </html>
