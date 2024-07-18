@@ -1,4 +1,4 @@
-/* styles.css */
+/* 기본 스타일 */
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
@@ -38,11 +38,11 @@ section {
     margin-bottom: 40px;
 }
 
-#blogForm {
+#noticeForm {
     margin-bottom: 20px;
 }
 
-#blogForm input, #blogForm textarea {
+#noticeForm input, #noticeForm textarea {
     width: 100%;
     margin: 10px 0;
     padding: 10px;
@@ -50,7 +50,7 @@ section {
     border-radius: 5px;
 }
 
-#blogForm button {
+#noticeForm button {
     padding: 10px 20px;
     border: none;
     background: #333;
@@ -59,23 +59,23 @@ section {
     border-radius: 5px;
 }
 
-#posts {
+#notices {
     text-align: left;
 }
 
-.post {
+.notice {
     border: 1px solid #ccc;
     padding: 10px;
     margin-bottom: 20px;
     border-radius: 5px;
 }
 
-.post h3 {
+.notice h3 {
     margin: 0;
     font-size: 24px;
 }
 
-.post p {
+.notice p {
     margin: 10px 0 0;
 }
 
@@ -84,18 +84,34 @@ footer {
     color: #fff;
     text-align: center;
     padding: 10px 0;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
 }
 
-/* 반응형 디자인을 위한 미디어 쿼리 예시 */
+/* 반응형 디자인을 위한 미디어 쿼리 */
 @media (max-width: 768px) {
     nav ul {
         flex-direction: column;
+        padding: 0;
     }
 
     nav ul li {
         margin: 10px 0;
+    }
+
+    nav ul li a {
+        font-size: 16px;
+    }
+
+    #noticeForm input, #noticeForm textarea {
+        width: 100%;
+        margin: 5px 0;
+    }
+
+    #noticeForm button {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .notice h3 {
+        font-size: 20px;
     }
 }
