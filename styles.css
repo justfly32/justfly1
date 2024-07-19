@@ -18,7 +18,6 @@ body {
 .container {
     width: 80%;
     margin: auto;
-    overflow: hidden;
     padding: 20px 0;
 }
 
@@ -36,8 +35,9 @@ header h1 {
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
+    margin-top: 20px;
 }
 
 .menu-item {
@@ -47,6 +47,10 @@ header h1 {
     padding: 20px;
     text-align: center;
     transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .menu-item a {
@@ -60,11 +64,13 @@ header h1 {
 .menu-item i {
     font-size: 36px;
     margin-bottom: 10px;
+    color: #333;
 }
 
 .menu-item h2 {
     margin: 10px 0;
     font-size: 24px;
+    color: #333;
 }
 
 .menu-item:hover {
@@ -86,7 +92,20 @@ footer {
         padding: 0 20px;
     }
 
-    .menu-item {
-        width: 100%;
+    .grid {
+        grid-template-columns: 1fr;
     }
+}
+
+/* 커서 블롭 스타일 */
+#cursorBlob {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 50%;
+    pointer-events: none;
+    transition: transform 0.2s ease;
 }
