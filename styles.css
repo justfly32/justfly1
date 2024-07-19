@@ -1,117 +1,65 @@
-/* 기본 스타일 */
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
+/* styles.css */
+
+/* CSS 리셋 */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+/* 기본 스타일링 */
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+    padding: 20px;
 }
 
 header {
     background: #333;
     color: #fff;
     padding: 10px 0;
+    text-align: center;
 }
 
 nav ul {
     list-style: none;
-    display: flex;
-    justify-content: center;
     padding: 0;
 }
 
 nav ul li {
-    margin: 0 15px;
+    display: inline;
+    margin: 0 10px;
 }
 
 nav ul li a {
     color: #fff;
     text-decoration: none;
-    font-size: 18px;
-}
-
-main {
-    padding: 20px;
-    text-align: center;
 }
 
 section {
-    margin-bottom: 40px;
-}
-
-#noticeForm {
-    margin-bottom: 20px;
-}
-
-#noticeForm input, #noticeForm textarea {
-    width: 100%;
-    margin: 10px 0;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-#noticeForm button {
-    padding: 10px 20px;
-    border: none;
-    background: #333;
-    color: #fff;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-#notices {
-    text-align: left;
-}
-
-.notice {
-    border: 1px solid #ccc;
-    padding: 10px;
-    margin-bottom: 20px;
-    border-radius: 5px;
-}
-
-.notice h3 {
-    margin: 0;
-    font-size: 24px;
-}
-
-.notice p {
-    margin: 10px 0 0;
+    margin: 20px 0;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 footer {
-    background: #333;
-    color: #fff;
     text-align: center;
-    padding: 10px 0;
+    margin-top: 20px;
 }
 
-/* 반응형 디자인을 위한 미디어 쿼리 */
-@media (max-width: 768px) {
-    nav ul {
-        flex-direction: column;
-        padding: 0;
-    }
-
+/* 반응형 디자인 */
+@media (max-width: 600px) {
     nav ul li {
+        display: block;
         margin: 10px 0;
+        text-align: center;
     }
 
-    nav ul li a {
-        font-size: 16px;
-    }
-
-    #noticeForm input, #noticeForm textarea {
-        width: 100%;
-        margin: 5px 0;
-    }
-
-    #noticeForm button {
-        width: 100%;
+    section {
         padding: 10px;
-    }
-
-    .notice h3 {
-        font-size: 20px;
     }
 }
