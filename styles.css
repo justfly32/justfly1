@@ -39,6 +39,12 @@ header nav ul li a {
 
 .section {
     padding: 2rem 0;
+    background-color: #f4f4f4;
+    margin-bottom: 1rem;
+}
+
+.section:nth-child(even) {
+    background-color: #e4e4e4;
 }
 
 .container {
@@ -65,6 +71,19 @@ form button {
     color: #fff;
     border: none;
     cursor: pointer;
+}
+
+ul#posts {
+    list-style: none;
+    padding: 0;
+}
+
+ul#posts li {
+    background: #fff;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
 }
 
 footer {
