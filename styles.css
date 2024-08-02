@@ -84,6 +84,23 @@ ul#posts li {
     padding: 1rem;
     border: 1px solid #ddd;
     border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+ul#posts li a {
+    flex-grow: 1;
+}
+
+ul#posts li button {
+    background: #e74c3c;
+    color: #fff;
+    border: none;
+    padding: 0.5rem;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-left: 10px;
 }
 
 footer {
