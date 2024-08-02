@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="styles.css">
     <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-database.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-auth.js"></script>
 </head>
 <body>
     <header>
@@ -70,14 +69,14 @@
     <script>
         // Firebase 초기화
         var firebaseConfig = {
-              apiKey: "AIzaSyDYqB1qnIN3KuqkoYU9TyHQG2pfWKzWr_w",
-              authDomain: "myweb-547bc.firebaseapp.com",
-              databaseURL: "https://myweb-547bc-default-rtdb.asia-southeast1.firebasedatabase.app",
-              projectId: "myweb-547bc",
-              storageBucket: "myweb-547bc.appspot.com",
-              messagingSenderId: "751450593114",
-              appId: "1:751450593114:web:c67929288161dbfd3f8563",
-              measurementId: "G-EFRG9SQ3ZC"
+            apiKey: "AIzaSyDYqB1qnIN3KuqkoYU9TyHQG2pfWKzWr_w",
+            authDomain: "myweb-547bc.firebaseapp.com",
+            databaseURL: "https://myweb-547bc-default-rtdb.asia-southeast1.firebasedatabase.app",
+            projectId: "myweb-547bc",
+            storageBucket: "myweb-547bc.appspot.com",
+            messagingSenderId: "751450593114",
+            appId: "1:751450593114:web:c67929288161dbfd3f8563",
+            measurementId: "G-EFRG9SQ3ZC"
         };
         firebase.initializeApp(firebaseConfig);
 
@@ -100,7 +99,7 @@
         db.on('child_added', function(snapshot) {
             var post = snapshot.val();
             var li = document.createElement('li');
-            li.textContent = post.title + ': ' + post.content;
+            li.textContent = post.title;
             document.getElementById('posts').appendChild(li);
         });
     </script>
