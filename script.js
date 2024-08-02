@@ -51,6 +51,11 @@ firebase.auth().onAuthStateChanged(function(user) {
             }, 2000);
         }
 
+        // 글 내용 닫기
+        document.getElementById('closeButton').addEventListener('click', function() {
+            document.getElementById('postContent').style.display = 'none';
+        });
+
         // 데이터베이스에서 데이터 읽기
         db.on('child_added', function(snapshot) {
             var post = snapshot.val();
