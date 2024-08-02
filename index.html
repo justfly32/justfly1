@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="styles.css">
     <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-auth.js"></script>
 </head>
 <body>
     <header>
@@ -81,62 +82,77 @@
         };
         firebase.initializeApp(firebaseConfig);
 
-        // 데이터베이스 참조
-        var db = firebase.database().ref('posts');
-
-        // 폼 제출 이벤트 처리
-        document.getElementById('postForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            var title = document.getElementById('title').value;
-            var content = document.getElementById('content').value;
-            var newPostRef = db.push();
-            newPostRef.set({
-                title: title,
-                content: content
-            });
-            document.getElementById('postForm').reset();
-            showNotification();
+        // Firebase 익명 로그인
+        firebase.auth().signInAnonymously().catch(function(error) {
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            console.error('Authentication error:', errorCode, errorMessage);
         });
 
-        // 글 저장 성공 알림
-        function showNotification() {
-            var notification = document.getElementById('notification');
-            notification.style.display = 'block';
-            setTimeout(function() {
-                notification.style.display = 'none';
-            }, 2000);
-        }
+        firebase.auth().onAuthStateChanged(function(user) {
+            if (user) {
+                // 데이터베이스 참조
+                var db = firebase.database().ref('posts');
 
-        // 데이터베이스에서 데이터 읽기
-        db.on('child_added', function(snapshot) {
-            var post = snapshot.val();
-            var li = document.createElement('li');
-            li.setAttribute('data-key', snapshot.key);
+                // 폼 제출 이벤트 처리
+                document.getElementById('postForm').addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    var title = document.getElementById('title').value;
+                    var content = document.getElementById('content').value;
+                    var newPostRef = db.push();
+                    newPostRef.set({
+                        title: title,
+                        content: content
+                    });
+                    document.getElementById('postForm').reset();
+                    showNotification();
+                });
 
-            var a = document.createElement('a');
-            a.href = "#";
-            a.textContent = post.title;
-            a.addEventListener('click', function() {
-                alert(post.content);
-            });
+                // 글 저장 성공 알림
+                function showNotification() {
+                    var notification = document.getElementById('notification');
+                    notification.style.display = 'block';
+                    setTimeout(function() {
+                        notification.style.display = 'none';
+                    }, 2000);
+                }
 
-            var deleteButton = document.createElement('button');
-            deleteButton.textContent = "삭제";
-            deleteButton.addEventListener('click', function() {
-                var key = li.getAttribute('data-key');
-                db.child(key).remove();
-            });
+                // 데이터베이스에서 데이터 읽기
+                db.on('child_added', function(snapshot) {
+                    var post = snapshot.val();
+                    var li = document.createElement('li');
+                    li.setAttribute('data-key', snapshot.key);
 
-            li.appendChild(a);
-            li.appendChild(deleteButton);
-            document.getElementById('posts').appendChild(li);
-        });
+                    var a = document.createElement('a');
+                    a.href = "#";
+                    a.textContent = post.title;
+                    a.addEventListener('click', function() {
+                        alert(post.content);
+                    });
 
-        // 데이터베이스에서 데이터 제거 시 화면에서 항목 제거
-        db.on('child_removed', function(snapshot) {
-            var key = snapshot.key;
-            var li = document.querySelector('li[data-key="' + key + '"]');
-            li.remove();
+                    var deleteButton = document.createElement('button');
+                    deleteButton.textContent = "삭제";
+                    deleteButton.addEventListener('click', function() {
+                        var key = li.getAttribute('data-key');
+                        db.child(key).remove();
+                    });
+
+                    li.appendChild(a);
+                    li.appendChild(deleteButton);
+                    document.getElementById('posts').appendChild(li);
+                });
+
+                // 데이터베이스에서 데이터 제거 시 화면에서 항목 제거
+                db.on('child_removed', function(snapshot) {
+                    var key = snapshot.key;
+                    var li = document.querySelector('li[data-key="' + key + '"]');
+                    if (li) {
+                        li.remove();
+                    }
+                });
+            } else {
+                console.log('User is signed out.');
+            }
         });
     </script>
 </body>
