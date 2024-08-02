@@ -58,6 +58,7 @@
                     <button type="submit">글 작성</button>
                 </form>
                 <ul id="posts"></ul>
+                <div id="notification" style="display: none;">글이 성공적으로 저장되었습니다!</div>
             </div>
         </section>
     </main>
@@ -94,7 +95,17 @@
                 content: content
             });
             document.getElementById('postForm').reset();
+            showNotification();
         });
+
+        // 글 저장 성공 알림
+        function showNotification() {
+            var notification = document.getElementById('notification');
+            notification.style.display = 'block';
+            setTimeout(function() {
+                notification.style.display = 'none';
+            }, 2000);
+        }
 
         // 데이터베이스에서 데이터 읽기
         db.on('child_added', function(snapshot) {
