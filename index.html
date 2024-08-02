@@ -135,7 +135,8 @@
                     var a = document.createElement('a');
                     a.href = "#";
                     a.textContent = post.title;
-                    a.addEventListener('click', function() {
+                    a.addEventListener('click', function(event) {
+                        event.preventDefault(); // 기본 동작 방지
                         document.getElementById('postTitle').textContent = post.title;
                         document.getElementById('postBody').textContent = post.content;
                         document.getElementById('postContent').style.display = 'block';
@@ -161,7 +162,10 @@
                         li.remove();
                     }
                     // 게시물 내용 숨기기
-                    document.getElementById('postContent').style.display = 'none';
+                    var postTitle = document.getElementById('postTitle').textContent;
+                    if (postTitle === snapshot.val().title) {
+                        document.getElementById('postContent').style.display = 'none';
+                    }
                 });
             } else {
                 console.log('User is signed out.');
