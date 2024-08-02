@@ -88,7 +88,8 @@
             e.preventDefault();
             var title = document.getElementById('title').value;
             var content = document.getElementById('content').value;
-            db.push().set({
+            var newPostRef = db.push();
+            newPostRef.set({
                 title: title,
                 content: content
             });
@@ -99,8 +100,32 @@
         db.on('child_added', function(snapshot) {
             var post = snapshot.val();
             var li = document.createElement('li');
-            li.textContent = post.title;
+            li.setAttribute('data-key', snapshot.key);
+
+            var a = document.createElement('a');
+            a.href = "#";
+            a.textContent = post.title;
+            a.addEventListener('click', function() {
+                alert(post.content);
+            });
+
+            var deleteButton = document.createElement('button');
+            deleteButton.textContent = "삭제";
+            deleteButton.addEventListener('click', function() {
+                var key = li.getAttribute('data-key');
+                db.child(key).remove();
+            });
+
+            li.appendChild(a);
+            li.appendChild(deleteButton);
             document.getElementById('posts').appendChild(li);
+        });
+
+        // 데이터베이스에서 데이터 제거 시 화면에서 항목 제거
+        db.on('child_removed', function(snapshot) {
+            var key = snapshot.key;
+            var li = document.querySelector('li[data-key="' + key + '"]');
+            li.remove();
         });
     </script>
 </body>
