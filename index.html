@@ -60,6 +60,10 @@
                 </form>
                 <ul id="posts"></ul>
                 <div id="notification" style="display: none;">글이 성공적으로 저장되었습니다!</div>
+                <div id="postContent" style="display: none; margin-top: 20px; border-top: 1px solid #ddd; padding-top: 20px;">
+                    <h3 id="postTitle"></h3>
+                    <p id="postBody"></p>
+                </div>
             </div>
         </section>
     </main>
@@ -132,7 +136,9 @@
                     a.href = "#";
                     a.textContent = post.title;
                     a.addEventListener('click', function() {
-                        alert(post.content);
+                        document.getElementById('postTitle').textContent = post.title;
+                        document.getElementById('postBody').textContent = post.content;
+                        document.getElementById('postContent').style.display = 'block';
                     });
 
                     var deleteButton = document.createElement('button');
@@ -154,6 +160,8 @@
                     if (li) {
                         li.remove();
                     }
+                    // 게시물 내용 숨기기
+                    document.getElementById('postContent').style.display = 'none';
                 });
             } else {
                 console.log('User is signed out.');
